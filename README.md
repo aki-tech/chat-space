@@ -24,13 +24,14 @@ Things you may want to cover:
 * ...
 
 chat-space DB設計
+
 ##usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
-##Association
+### Association
 - has_many :messages
 - has_many :group
 
@@ -41,7 +42,7 @@ chat-space DB設計
 |image|string|null: true|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-##Association
+### Association
 - belongs_to :user
 - belongs_to :group
 - has_many :groups_users
@@ -52,7 +53,7 @@ chat-space DB設計
 |------|----|-------|
 |groupname|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
-##Association
+### Association
 - has_many :message
 - belongs_to :user
 
@@ -61,6 +62,6 @@ chat-space DB設計
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-###Association
+### Association
 - belongs_to :group
 - belongs_to :user
