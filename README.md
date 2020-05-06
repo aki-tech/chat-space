@@ -46,7 +46,6 @@ chat-space DB設計
 ### Association
 - belongs_to :user
 - belongs_to :group
-- has_many :groups_users
 
 
 ##groupsテーブル
