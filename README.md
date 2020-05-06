@@ -30,30 +30,31 @@ chat-space DB設計
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :messages
+- has_many :groups_users
 - has_many :groups through: :groups_users
 
 ##messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: true|
-|image|string|null: true|
+|body|text||
+|image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
 - has_many :groups
-
+- has_many :groups_users
 
 
 ##groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
+- has_many :groups_users
 - has_many :groups_users
 - has_many :users,  through: :groups_users
 
@@ -63,5 +64,5 @@ chat-space DB設計
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :groups 
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
