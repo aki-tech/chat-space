@@ -23,21 +23,23 @@
     margin: 40px 20px;
     &__left{
       float: left;
+      padding-right: 180px;
     }
-    .ul{
+    &__ul{
       color: #ffffff;
       width: 60px;
       float: right;
       text-align: right;
-      .li{
+      &-li{
        display: inline-block;
+       list-style: none;
         .edit{
          color: white;
         }
         .new{
          color: white;
         }
-     }
+      }
     }
   }
 }
@@ -45,18 +47,26 @@
   background-color: #2f3e51;
   height: calc(100vh - 100px);
   padding: 20px;
-  &__top{
-    font-size: 15px;;
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 5px;
+  &-box{
+    
+    .boxes{
+      text-decoration: none;
+    }
   }
-  &__bottom{
-    font-size: 11px;;
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 40px;
-  }
+    &-box__top{
+      font-size: 15px;;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 5px;
+    
+    }
+    &-box__bottom{
+      font-size: 11px;;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 40px;
+    
+    }
 }
 }
 
