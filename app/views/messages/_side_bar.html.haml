@@ -3,22 +3,21 @@
     .side-bar__user-name__box
       .side-bar__user-name__box__left 
         = current_user.name
-      .ul 
-        .li
-          = link_to "#", class:"edit" do
+      %ul.side-bar__user-name__box__ul
+      = link_to new_group_path do
+        %li.side-bar__user-name__box__ul-li
+          = link_to new_group_path(current_user), class:"edit" do
             = icon('fas', 'edit')
-        .li
+        %li.side-bar__user-name__box__ul-li
           = link_to edit_user_path(current_user), class:"new" do
             = icon('fas', 'cog')
 
   .side-bar__group-list 
-    .side-bar__group-list__top techcamp
-    .side-bar__group-list__bottom まだメッセージがありません
-    .side-bar__group-list__top techcamp
-    .side-bar__group-list__bottom まだメッセージがありません
-    .side-bar__group-list__top techcamp
-    .side-bar__group-list__bottom まだメッセージがありません
-
-
-  
- 
+    - current_user.groups.each do |group|
+      .side-bar__group-list-box
+        = link_to '#', class: "boxes" do
+          .side-bar__group-list-box__top 
+            = group.name
+          .side-bar__group-list-box__bottom 
+            メッセージはまだありません。
+    
