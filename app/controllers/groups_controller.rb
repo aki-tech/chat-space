@@ -35,4 +35,3 @@ class GroupsController < ApplicationController
 
 end
 
-# root_path
