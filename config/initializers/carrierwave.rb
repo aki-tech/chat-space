@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'chat-space2020202020202020'
-  config.asset_host = 'https://chat-space2020202020202020.s3.amazonaws.com'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space2020202020202020'
 end
