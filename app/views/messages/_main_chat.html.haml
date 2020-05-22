@@ -4,7 +4,7 @@
       %h2.main-chat-group-info__left-box__name 
         = @group.name
       %ul.main-chat-group-info__left-box__list 
-        member :
+        Member : 
         - @group.users.each do |user|
           %li.main-chat-group-info__left-box__list__member 
             = user.name
