@@ -9,7 +9,7 @@
           %li.main-chat-group-info__left-box__list__member 
             = user.name
     .main-chat-group-info__right-box
-      = link_to 'Edit', edit_group_path(current_user), class: "edition"
+      = link_to 'Edit', edit_group_path(@group), class: "edition"
 
   .main-chat__message-list
     = render partial: 'message', collection: @messages
