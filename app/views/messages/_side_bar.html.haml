@@ -3,14 +3,15 @@
     .side-bar__user-name__box
       .side-bar__user-name__box__left 
         = current_user.name
-      %ul.side-bar__user-name__box__ul
-      = link_to new_group_path do
-        %li.side-bar__user-name__box__ul-li
-          = link_to new_group_path(current_user), class:"edit" do
-            = icon('fas', 'edit')
-        %li.side-bar__user-name__box__ul-li
-          = link_to edit_user_path(current_user), class:"new" do
-            = icon('fas', 'cog')
+      .side-bar__user-name__box__right
+        .side-bar__user-name__box__right-ul
+        = link_to new_group_path do
+          %li.side-bar__user-name__box__right-ul-li
+            = link_to new_group_path(current_user), class:"edit" do
+              = icon('fas', 'edit')
+          %li.side-bar__user-name__box__right-ul-li
+            = link_to edit_user_path(current_user), class:"new" do
+              = icon('fas', 'cog')
 
   .side-bar__group-list 
     - current_user.groups.each do |group|

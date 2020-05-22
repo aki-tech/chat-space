@@ -2,7 +2,8 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-       `<div class="message" data-message-id=${message.id}></div>
+       `<div class="message" data-message-id=${message.id}>
+       <div class="main-chat__message-list__box">
        <div class="main-chat__message-list__box-upper-info">
             <div class="main-chat__message-list__box-upper-info__person">
               ${message.user_name}
@@ -16,11 +17,14 @@ $(function(){
               ${message.content}
             </p>
           </div>
-          <img src=${message.image} >`
+          <img src=${message.image} >
+        </div>
+        </div>`
       return html;
     } else {
       var html =
-       `<div class="message" data-message-id=${message.id}></div>
+       `<div class="message" data-message-id=${message.id}>
+       <div class="main-chat__message-list__box">
        <div class="main-chat__message-list__box-upper-info">
             <div class="main-chat__message-list__box-upper-info__person">
               ${message.user_name}
@@ -33,7 +37,9 @@ $(function(){
             <p class="main-chat__message-list__box-text__content">
               ${message.content}
             </p>
-          </div>`
+          </div>
+        </div>
+        </div>`
       return html;
     };
   }
@@ -55,10 +61,12 @@ $(function(){
       $('form')[0].reset();
       $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
       $('.main-chat__message-form__box__send').attr('disabled',false);
+      
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
     });
+    
   })
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data("message-id");
